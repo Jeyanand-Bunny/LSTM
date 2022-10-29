@@ -118,10 +118,10 @@ def getdata(is_act, hr, dt):
 
 def save_dt(res, hr, dt):
     conn = psycopg2.connect(
-        host="10.100.0.35",
+        host="localhost",
         database="postgres",
         user="postgres",
-        password="$$erver@&aps!")
+        password="password")
     cursor = conn.cursor()
     i = 0
     dstr = ''
