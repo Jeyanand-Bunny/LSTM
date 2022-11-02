@@ -87,7 +87,7 @@ def get_time():
 def get_n_data(conn, cursor):
     iter_dates = get_dates()
     # iter_data = get_data
-    query = "SELECT  reading_json_text FROM vscada.scada_point_data where point_id = '10751' and reading_date = %s"
+    query = "SELECT  reading_json_text FROM sql where point_id = '1' and reading_date = %s"
 
     # print( tm,val)
 
@@ -244,8 +244,8 @@ def LSTM_MAIN():
     fstr = '['+dstr+']'
     # print(fstr)
 
-    query = "INSERT INTO vscada.rtu_point_real_fcast_data (rtu_point_id, rtu_data_date, forecast_json)VALUES(%s,%s,%s);"
-    vars = ('10751', tm_date, fstr)
+    query = "INSERT INTO sql (id, date, forecast_json)VALUES(%s,%s,%s);"
+    vars = ('1', tm_date, fstr)
     cursor.execute(query, vars)
     #print(query, vars)
     logging.info("affected rows = {}".format(cursor.rowcount))
